@@ -1,17 +1,9 @@
 <script setup>
-const number = 10;
-
-const id = Math.random();
-
-const myAtr = "aria-label";
-
-const ariaLabelValue = "numero de contador";
+const { minNumber, maxNumber } = defineProps(["minNumber", "maxNumber"]); //lo que queremos obtener de algun componente padre
 </script>
 <template>
   <div class="counter-game">
-    <span :[myAtr]="ariaLabelValue" :id="id" class="number">{{ number }}</span
-    >//v-bind abreviado con : //:[myAtr]="ariaLabelValue" es lo mismo que
-    v-bind:[myAtr]="ariaLabelValue" //Valores dinamicos en las etiquetas
+    <span :id="id" class="number">{{ number }}</span>
     <div class="button-group">
       <button>-</button>
       <button>+</button>

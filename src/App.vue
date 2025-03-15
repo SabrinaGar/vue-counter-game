@@ -1,8 +1,8 @@
 <script setup>
 import GameCounter from "@/components/GameCounter.vue";
 
-const MIN_number = 0;
-const MAX_number = 50;
+const MIN_NUMBER = 0;
+const MAX_NUMBER = 50;
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const MAX_number = 50;
         <h1 class="title">Guess the number! 🎉</h1>
         <span>{{ counter }}</span>
         <div>
-          <GameCounter />
+          <GameCounter :min-number="MIN_NUMBER" :max-number="MAX_NUMBER" />
         </div>
       </div>
     </div>
