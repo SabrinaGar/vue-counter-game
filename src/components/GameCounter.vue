@@ -1,5 +1,20 @@
 <script setup>
-const { minNumber, maxNumber } = defineProps(["minNumber", "maxNumber"]); //lo que queremos obtener de algun componente padre
+const { minNumber, maxNumber } = defineProps({
+  minNumber: {
+    type: Number, /// se pueden definir varios tipos de datos para un mismo prop
+    required: true,
+    default: 0,
+  },
+  maxNumber: {
+    type: Number,
+    required: true,
+    default: 50,
+  },
+  example: {
+    type: [String, Number],
+    validator: (value) => value.includes("+", "-"),
+  },
+});
 </script>
 <template>
   <div class="counter-game">
