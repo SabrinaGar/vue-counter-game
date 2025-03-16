@@ -1,4 +1,9 @@
 <script setup>
+import { ref } from "vue";
+
+const counter = ref(0);
+const increment = () => counter.value++;
+const decrement = () => counter.value--;
 const { minNumber, maxNumber } = defineProps({
   minNumber: {
     type: Number, /// se pueden definir varios tipos de datos para un mismo prop
@@ -18,10 +23,10 @@ const { minNumber, maxNumber } = defineProps({
 </script>
 <template>
   <div class="counter-game">
-    <span :id="id" class="number">{{ number }}</span>
+    <span :id="id" class="number">{{ counter }}</span>
     <div class="button-group">
-      <button>-</button>
-      <button>+</button>
+      <button @click="decrement">-</button>
+      <button @click="increment">+</button>
     </div>
   </div>
 </template>
